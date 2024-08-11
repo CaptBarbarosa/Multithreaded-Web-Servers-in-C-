@@ -1,7 +1,9 @@
 Steps involving creating a HTTP server is pretty straight forward actually.
 
 1.) Create the socket: We do this with the socket() function.
+Example: int server_fd = socket(domain, type, protocol);
 Example: int server_fd = socket(AF_INET, SOCK_STREAM, 0);
+
 
 2.) Bind (Identify) the socket: Bind the socket to a specific IP address and port via bind()
 Example:
