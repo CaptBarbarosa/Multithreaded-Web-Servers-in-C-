@@ -1,11 +1,12 @@
 Steps involving creating a HTTP server is pretty straight forward actually.
 
-1.) Create the socket: We do this with the socket() function.
+    1.) Create the socket: We do this with the socket() function.
 Example: int server_fd = socket(domain, type, protocol);
 Example: int server_fd = socket(AF_INET, SOCK_STREAM, 0);
 
 
-2.) Bind (Identify) the socket: Bind the socket to a specific IP address and port via bind()
+    2.) Bind (Identify) the socket: Bind the socket to a specific IP address and port via bind()
+Example: int bind(int sockfd, struct sockaddr *your_address , socklen_t addrlen)
 Example:
 struct sockaddr_in address;
 address.sin_family = AF_INET;
@@ -13,16 +14,16 @@ address.sin_addr.s_addr = INADDR_ANY;
 address.sin_port = htons(PORT);
 bind(server_fd, (struct sockaddr *)&address, sizeof(address));
 
-3.) Listen for incoming connection: We do this via listen() function
+    3.) Listen for incoming connection: We do this via listen() function
 Example:listen(server_fd, 3);
 
-4.) Accept incoming function: Use accept() function
+    4.) Accept incoming function: Use accept() function
 Example: int new_socket = accept(server_fd, (struct sockaddr *)&address, (socklen_t*)&addrlen);
 
-5.) Handle HTTP Request: Receive data using recv(), 
+    5.) Handle HTTP Request: Receive data using recv(), 
 parse HTTP request to determine what the client asks for
 Generate a response based on the request, generate an appropriate HTTP response.
 Send response by using send().
 
-6.) Close the client connection using close().
+    6.) Close the client connection using close().
 Example: close(new_socket);
