@@ -1,3 +1,13 @@
+            TCP Server 
+
+    TCP servers must listed on some user configured IP-Address and Port No.
+    They must be AVAILABLE to accept new connections (of course up to a point)
+    Should be able to handle multiple Client's Connections simultaneously.
+    They should be able to deal with connection/disconnection.
+
+
+
+
 Steps involving creating a HTTP server is pretty straight forward actually.
 
     1.) Create the socket: We do this with the socket() function.
