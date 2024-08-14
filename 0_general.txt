@@ -37,3 +37,9 @@ Send response by using send().
 
     6.) Close the client connection using close().
 Example: close(new_socket);
+
+
+Our Tibrary will have 4 parts. TCP server Controller, Connection Acception Service, Client DB Mgr (DBM) and Client Data Request Service(DRS).
+
+
+
